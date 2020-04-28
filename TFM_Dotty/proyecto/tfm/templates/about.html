@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+  <title>Dotty - About</title>
+{% endblock %}
+
+{% block style %}
+.grid
+ {
+  display: grid;
+  grid-template-columns: repeat(3,150px);  /* 3 columns */
+  grid-template-rows: repeat(3,150px); /* 3 rows  */
+  grid-gap:50px 30px; /* 50 pixels of space added between rows and 30 pixels added between columns  */
+}
+
+.grid-item{
+  border:thin gray solid;
+  padding:10px;
+}
+
+{% endblock %}
+
+{% block body %}
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-section w3-center">
+    ABOUT
+  </div>
+</div>
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">ABOUT DOTTY</h3>
+  <p class="w3-center"><em>Title 1</em></p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in molestie felis, ut rutrum magna. Donec a ipsum non lacus ullamcorper tincidunt. Vestibulum euismod elit at lacus rutrum, eu egestas turpis porttitor. Donec purus elit, molestie ac venenatis ac, dignissim sed sem. In et ullamcorper neque. In nibh sem, hendrerit non risus sed, pellentesque interdum erat. Aenean mauris quam, dictum quis neque lacinia, porttitor facilisis diam. In malesuada porttitor tortor, at fringilla nibh sagittis nec. In elementum, erat a scelerisque facilisis, mauris mi aliquet justo, sed dignissim massa nibh eget magna. Pellentesque pharetra ante quis odio posuere, nec pretium nibh.</p>
+  <p class="w3-center"><em>Title 2</em></p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in molestie felis, ut rutrum magna. Donec a ipsum non lacus ullamcorper tincidunt. Vestibulum euismod elit at lacus rutrum, eu egestas turpis porttitor. Donec purus elit, molestie ac venenatis ac, dignissim sed sem. In et ullamcorper neque. In nibh sem, hendrerit non risus sed, pellentesque interdum erat. Aenean mauris quam, dictum quis neque lacinia, porttitor facilisis diam. In malesuada porttitor tortor, at fringilla nibh sagittis nec. In elementum, erat a scelerisque facilisis, mauris mi aliquet justo, sed dignissim massa nibh eget magna. Pellentesque pharetra ante quis odio posuere, nec pretium nibh.</p>
+</div>
+<br/><br/>
+
+<div class="w3-row w3-center w3-dark-grey w3-padding-16">
+  <div class="w3-section w3-center">
+    TEAM
+  </div>
+</div>
+
+<div class="grid">
+   <div class="grid-item"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/76301/01.png"></div>
+    <div class="grid-item"><img src="{% static 'user.png'%}" alt="User img"></div>
+    <div class="grid-item"><img src="{% static 'user.png'%}"></div>
+    <div class="grid-item"><img src="{% static 'user.png'%}"></div>
+    <div class="grid-item"><img src="{% static 'user.png'%}"></div>
+    <div class="grid-item"><img src="{% static 'user.png'%}"></div>
+</div>
+
+<br/><br/>
+<br/><br/>
+<br/><br/>
+{% endblock %}

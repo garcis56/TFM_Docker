@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  <title>Dotty - Contact Us</title>
+{% endblock %}
+
+{% block style %}
+
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+.button {
+  width: 10%;
+}
+
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+  width: 50%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+
+{% endblock %}
+
+{% block body %}
+
+<div class="w3-content w3-container w3-padding-64" id="contactform">
+  <h3 class="w3-center">CONTACT FORM</h3>
+  <p style="text-align:center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque in molestie felis, ut rutrum magna. Donec a ipsum non lacus ullamcorper tincidunt. </p>
+</div>
+
+<div id="id01" class="modal">
+<form class="modal-content" method="POST">
+    <div class="container">
+        {% csrf_token %}
+        {% for field in form %}
+          <p>
+            {{ field.label_tag }}<br>
+            {{ field }}
+            {% for error in field.errors %}
+              <p style="color: red">{{ error }}</p>
+            {% endfor %}
+          </p>
+        {% endfor %}
+
+        <button type="submit" style="width: 50%">Send</button>
+    </div>
+</form>
+</div>
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
